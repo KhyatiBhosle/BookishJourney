@@ -1,0 +1,67 @@
+<%- include('partials/header.ejs')%>
+<div id="landingPage">
+    <div id="mainSection">
+        <h3>
+            Welcome to the 
+        </h3>
+        
+        <div class="headingDiv">
+            <h1 class="heading">Bookish Journey!</h1>
+        </div>
+        <br>
+        <p>Embark on a literary journey with me, where words weave tales, and reviews unfold worlds. Immerse yourself in the magic of storytelling and discover your next captivating read.</p>
+    </div>
+    
+    <div id="latestAddition">
+        <h1>
+            My Latest Additions!
+        </h1>
+        <br>
+        <br>
+        <div class="row">
+            <% for(var i = books.length-1; i>=books.length-4; i--){%>
+                <div class="col">
+                    <div class="bookDiv">
+                        <img class="book" src="<%=books[i].link%>" alt="<%=books[i].title%>"><br>
+                        
+                        <% for(var j = 0; j< books[i].rating; j++){%>
+                            <i class="fa-solid fa-star"></i>
+                        <%}%>
+                        <% for(var k = books[i].rating; k< 5; k++){%>
+                            <i class="fa-regular fa-star"></i>
+                        <%}%>
+                    </div>
+                </div>
+            <%}%>
+        </div>
+        <br>
+        <br>
+        
+        <a class="btn" href="/allBooks">View full collection</a>
+        <br>
+        <br>
+        <hr>
+    </div>
+    <div id="current">
+        <h1>
+            Currently Reading!
+        </h1>
+        <br><br>
+        <div class="row">
+            <% for(var i = pending.length-1; i>=0; i--){%>
+            <div class="col-2 currentCover">
+                <img class="book" src="<%=pending[i].link%>" alt="<%=pending[i].title%>"><br>
+            </div>
+            <div class="col-10 description">
+                <p>
+                    <%= pending[i].description.slice(0, 400) %>...
+                </p>
+            </div>
+            <%}%>
+        </div>
+        <br>
+        <br>
+        <hr>
+    </div>
+</div>
+<%- include('partials/footer.ejs') %>

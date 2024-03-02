@@ -1,0 +1,7 @@
+<%- include('partials/header.ejs')%>
+    <% books.forEach(book => {%>
+        <a href='<%=book.id%>'>
+            <img class="book" src="<%=book.link%>" alt="<%=book.title%>">
+        </a>
+    <%});%>
+<%- include('partials/footer.ejs') %>

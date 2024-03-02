@@ -1,0 +1,252 @@
+body{
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    background-color: #FEFBF6;
+    padding: 0;
+}
+
+h1{
+    font-family: "Roboto Mono", monospace;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+#landingPage{
+    margin: 0;
+    background-color: #FEFBF6;
+}
+
+#mainSection{
+    padding: 25vh 15vw 0 15vw; 
+    min-height: 95vh;
+    color: #5C636E;
+    background-image: url('/images/books.png');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 30%;
+}
+
+.headingDiv{
+    margin: 0;
+    padding: 0;
+    text-align: -webkit-center;
+}
+
+h1.heading{
+    color: #393E46;
+    letter-spacing: 15px;
+    font-size: 5vw;
+    position: relative;
+    width: max-content;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+}
+
+.heading::before, .heading::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FEFBF6;
+}
+.heading::before{
+    animation: typing 4s steps(16) forwards 0.1s;
+}
+
+.heading::after{
+    width: 0.125em;
+    background-color:#393E46;
+    animation: 
+    typing 4s steps(16) forwards 0.1s,
+    blink 750ms infinite;
+}
+
+#mainSection h3{
+    font-size: 200%;
+}
+
+#mainSection p{
+    font-size: large;
+    padding: 0 5%;
+    opacity: 0;
+    transform: translateY(3rem);
+    animation: fadein 2s ease 4.5s forwards;
+}
+
+.row{
+    margin: 0;
+}
+
+#latestAddition{
+    padding: 5vh 20vw;
+}
+
+#latestAddition h1, #current h1{
+    padding-top: 5vh;
+    color: #393E46;
+    font-weight: 200;
+}
+
+#latestAddition .btn{
+    background-color: none;
+    color: #393E46;
+    padding: 10px;
+    border-radius: 0%;
+    border: solid 1px #5C636E;
+}
+
+#latestAddition .btn:hover{
+    border-radius: 10px;
+    background-color: #393E46;
+    color:#FEFBF6;
+}
+
+.book, .cover{
+    height: 150px;
+    box-shadow: -10px 5px 5px #e8e5e0;
+    margin: 3%;
+    filter: brightness(90%);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.book:hover, .cover:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+    filter: brightness(100%);
+}
+#current{
+    padding: 0vh 20vw;
+}
+#current h1{
+    padding-top: 0;
+}
+
+.currentCover{
+    text-align: right;
+}
+
+#current .description{
+    text-align: justify;
+    padding-left: 50px;
+}
+
+
+.write{
+    margin: 10%;
+    padding: 10%;
+    background-color: #393E46;
+    color: #FEFBF6;
+    box-shadow: -10px 5px 5px #e8e5e0;
+}
+
+.write input{
+    width: 60%;
+    padding: 10px;
+    box-shadow: none;
+    background-color: #FEFBF6;
+    color: #393E46;
+    border-radius: 5px;
+    border: none;
+}
+
+.write select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 60%;
+    padding: 10px;
+    background-color: #FEFBF6;
+    color: #393E46;
+    border-radius: 5px;
+    border: none;
+}
+.write .btn{
+    background-color: transparent;
+    border: solid 1px #FEFBF6;
+    color: #FEFBF6;
+    border-radius: 0%;
+}
+
+.write .btn:hover{
+    background-color: #FEFBF6;
+    color: #393E46;
+    border-radius: 5px;
+}
+
+.write #part2, .write #part3{
+    display: none;
+}
+
+.write textarea{
+    height: 50vh;
+    width: 50vw;
+    border: none;
+    border-radius: 5px;
+    padding: 10px
+}
+
+.write .cover{
+    box-shadow: -10px 5px 5px #393E46;
+}
+
+.write i{
+    font-size: 30px;
+}
+
+.write i:hover{
+    cursor: pointer;
+}
+
+#bookPage{
+    padding: 10%;
+}
+
+.img{
+    text-align: right;
+}
+
+.title{
+    text-align: justify;
+}
+
+.main{
+    box-shadow: -10px 5px 5px #e8e5e0;
+    border-radius: 20px;
+
+}
+
+.bookView{
+    border: solid 2px #5C636E;
+    border-radius: 20px;
+    padding: 7% 5%;
+    text-align: justify;
+}
+
+.bookView div{
+    overflow-y: scroll;
+    height: 60vh;
+}
+@keyframes typing {
+    to{
+        left: 100%
+    }
+}
+
+@keyframes blink {
+    to{
+        background-color: transparent;
+    }
+}
+
+@keyframes fadein {
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

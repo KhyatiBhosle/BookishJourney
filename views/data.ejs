@@ -1,0 +1,46 @@
+<%- include('partials/header.ejs')%>
+
+<form class="write" method="post" action="/data">
+    <h1><%=title%></h1>
+    <p>
+        by <%=author%>
+    </p>
+    <br>
+   
+    <input type="hidden" name="author" value="<%=id%>">
+    <div id="part1">
+        <textarea name="description"  placeholder="What is the book about?" required></textarea><br><br>
+        <% if(status === "Completed"){%>
+            <input id="rating" type="hidden" name="rating">
+            <div class="ratings">
+                <i class="rating fa-regular fa-star"></i>
+                <i class="rating fa-regular fa-star"></i>
+                <i class="rating fa-regular fa-star"></i>
+                <i class="rating fa-regular fa-star"></i>
+                <i class="rating fa-regular fa-star"></i>
+            </div>
+        <%}%>
+        <br>
+        <span id="next1" class="btn">Next</span>
+    </div>
+    <% if(status === "Completed"){%>
+        <div id="part2">
+            <textarea name="review"  placeholder="What do you think about the book?"></textarea><br><br>
+            <span id="previous1" class="btn">Previous</span>    
+            <span id="next2" class="btn">Next</span>    
+        </div>
+    <%}%>
+    <div id="part3">
+        <p>Select a relevent cover for the book!</p>
+        <input type="hidden" name="link" id="link" required>
+        <% olid.forEach(id => {%>
+            <img class="cover" src="https://covers.openlibrary.org/b/olid/<%=id%>-M.jpg" name="<%=id%>">
+        <%});%>
+        <br><br>
+        <span id="previous2" class="btn">Previous</span>    
+        <button class="btn" type="submit">Submit</button>
+    </div>
+</form>
+
+<script src="scripts/data.js"></script>
+<%- include('partials/footer.ejs') %>

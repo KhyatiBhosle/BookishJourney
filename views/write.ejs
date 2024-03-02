@@ -1,0 +1,17 @@
+<%- include('partials/header.ejs')%>
+
+<form class="write" action="/write" method="post">
+    <h1>Let's Get Started!</h1>
+    <br>
+    <input type="text" name="title" placeholder="Title of the book" required><br><br>
+    <input type="text" name="author" placeholder="Who wrote it"><br><br>
+    <select name="status" id="status">
+        <option>Reading</option>
+        <option>Completed</option>
+    </select>
+    <br><br>
+    <button class="btn" type="submit">Submit</button>
+</form>
+
+<script src="scripts/write.js"></script>
+<%- include('partials/footer.ejs') %>

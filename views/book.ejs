@@ -1,0 +1,54 @@
+<%- include('partials/header.ejs')%>
+<div id="bookPage">
+    <div class="header row">
+        <div class="col img">
+            <span>
+                <img class="book" src="<%=book.link%>" alt="<%=book.title%>">
+                
+            </span>
+        </div>
+        <div class="col title">
+            <h3>
+                <%= book.title %>
+            </h3>
+            <p>
+                by:<br>
+                <%= book.author %>
+            </p>
+            <% for(var j = 0; j< book.rating; j++){%>
+                <i class="fa-solid fa-star"></i>
+            <%}%>
+        
+            <% for(var k = book.rating; k< 5; k++){%>
+                <i class="fa-regular fa-star"></i>
+            <%}%>
+        </div>
+    </div>
+<br>
+<br>
+    <div class="main row">
+        <div class="col bookView align-middle">
+            <div>
+                <p class="">
+                    <%= book.description %>
+                </p>
+            </div>
+        </div>
+        <div class="col bookView">
+            <% if(book.review != ''){%>
+                <div>
+                    <p>
+                        <%=book.review%>
+                    </p>
+                </div>
+            <%}else{%>
+                <p>
+                    Stay Tuned for the Review!
+                </p>
+            <%}%>
+        </div>
+    </div>
+</div>
+
+
+<%- include('partials/footer.ejs') %>

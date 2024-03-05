@@ -22,8 +22,9 @@
             <% for(var i = books.length-1; i>=books.length-4; i--){%>
                 <div class="col">
                     <div class="bookDiv">
-                        <img class="book" src="<%=books[i].link%>" alt="<%=books[i].title%>"><br>
-                        
+                        <a href="<%=books[i].id%>">
+                            <img class="book" src="<%=books[i].link%>" alt="<%=books[i].title%>"><br>
+                        </a>
                         <% for(var j = 0; j< books[i].rating; j++){%>
                             <i class="fa-solid fa-star"></i>
                         <%}%>
@@ -49,13 +50,14 @@
         <br><br>
         <div class="row">
             <% for(var i = pending.length-1; i>=0; i--){%>
-            <div class="col-2 currentCover">
+            <div class="currentCover col-2 ">
                 <img class="book" src="<%=pending[i].link%>" alt="<%=pending[i].title%>"><br>
             </div>
-            <div class="col-10 description">
+            <div class="description col-10 ">
                 <p>
-                    <%= pending[i].description.slice(0, 400) %>...
-                </p>
+                    <%= pending[i].description.slice(0, 400) %>...<a class='btn' href='<%=pending[i].id%>'>Read More</a>
+                </p>   
+
             </div>
             <%}%>
         </div>

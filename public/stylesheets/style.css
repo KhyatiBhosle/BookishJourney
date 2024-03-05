@@ -12,7 +12,7 @@ h1{
 a{
     text-decoration: none;
 }
-
+/*-----------------------------------------------------------------------------------------------------------------------------------------*/
 
 #landingPage{
     margin: 0;
@@ -35,48 +35,13 @@ a{
     text-align: -webkit-center;
 }
 
-h1.heading{
-    color: #393E46;
-    letter-spacing: 15px;
-    font-size: 5vw;
-    position: relative;
-    width: max-content;
-    text-decoration: underline;
-    text-decoration-style: wavy;
-}
 
-.heading::before, .heading::after{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #FEFBF6;
-}
-.heading::before{
-    animation: typing 4s steps(16) forwards 0.1s;
-}
-
-.heading::after{
-    width: 0.125em;
-    background-color:#393E46;
-    animation: 
-    typing 4s steps(16) forwards 0.1s,
-    blink 750ms infinite;
-}
 
 #mainSection h3{
     font-size: 200%;
 }
 
-#mainSection p{
-    font-size: large;
-    padding: 0 5%;
-    opacity: 0;
-    transform: translateY(3rem);
-    animation: fadein 2s ease 4.5s forwards;
-}
+
 
 .row{
     margin: 0;
@@ -120,6 +85,7 @@ h1.heading{
     cursor: pointer;
     filter: brightness(100%);
 }
+
 #current{
     padding: 0vh 20vw;
 }
@@ -136,7 +102,10 @@ h1.heading{
     padding-left: 50px;
 }
 
-
+#current a{
+    text-decoration: underline;
+}
+/*-----------------------------------------------------------------------------------------------------------------------------------------*/
 .write{
     margin: 10%;
     padding: 10%;
@@ -202,36 +171,148 @@ h1.heading{
 .write i:hover{
     cursor: pointer;
 }
+/*-----------------------------------------------------------------------------------------------------------------------------------------*/
 
-#bookPage{
-    padding: 10%;
+#bookPage .header{
+    background-color: #e8e5e0;
+    padding: 15vh 15vw 30vh 15vw;
+}
+#bookPage .content{
+    background-color: #393E46;
+    color: #FEFBF6;
+    padding: 10vh 10vw;
 }
 
-.img{
-    text-align: right;
-}
+#bookPage .content .col-4 img{
+    box-shadow: none;
+    height: 30vh;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
 
-.title{
+}
+#bookPage .content .col-4 p{
+    text-align: left;
+}
+#bookPage .content .col-6{
+    margin: auto;
+    padding: 5%;
+    background-color: #FEFBF6;
+    color: #393E46;
     text-align: justify;
+    border-radius: 5px;
 }
 
-.main{
-    box-shadow: -10px 5px 5px #e8e5e0;
-    border-radius: 20px;
+@media (min-width: 850px){
+    h1.heading{
+        color: #393E46;
+        letter-spacing: 15px;
+        font-size: 5vw;
+        position: relative;
+        width: max-content;
+        text-decoration: underline;
+        text-decoration-style: wavy;
+    }
 
+    .heading::before, .heading::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #FEFBF6;
+    }
+    .heading::before{
+        animation: typing 4s steps(16) forwards 0.1s;
+    }
+    
+    .heading::after{
+        width: 0.125em;
+        background-color:#393E46;
+        animation: 
+        typing 4s steps(16) forwards 0.1s,
+        blink 750ms infinite;
+    }
+
+    #mainSection p{
+        font-size: large;
+        padding: 0 5%;
+        opacity: 0;
+        transform: translateY(3rem);
+        animation: fadein 2s ease 4.5s forwards;
+    }
+
+    #bookPage .content .col-4{
+        position: relative;
+        bottom: 25vh;
+        overflow: scroll;  
+    }
+    #bookPage .content .col-4 > .description > div{
+        min-height: 40vh;
+        max-height: 45vh;
+        overflow: scroll;
+    }
+    #bookPage .content .col-6{
+        position: relative;
+        bottom: 25vh;
+        min-height: 75vh;
+        max-height: 80vh;
+        overflow: scroll;    
+    }
+    .readMore1, .readMore2, .showLess2, .showLess1{
+        display: none;
+    }
+    
 }
 
-.bookView{
-    border: solid 2px #5C636E;
-    border-radius: 20px;
-    padding: 7% 5%;
-    text-align: justify;
+@media (max-width: 850px) {
+    #current .currentCover, #current .description{
+        display: block;
+        width: 100%;
+        text-align: justify;
+        padding: 0;
+        padding-top: 10px;
+    } 
+
+    #current .currentCover{
+        text-align: center;
+    }
+
+    #current{
+        padding: 0 10vw;
+    }
+
+    #bookPage .content .col-4, #bookPage .content .col-6 {
+        display: block;
+        width: 80vw;
+    }
+    #bookPage .content .col-4 .description{
+        text-align: justify;
+    }
+
+    .div1, .div2{
+        height: auto;
+        display: grid;
+        grid-template-rows: 0.5fr;
+        transition: grid-template-rows 2s ease-in;
+    }
+
+    .div1 > div, .div2 > div{
+        overflow: hidden;
+    }
+
+    .div1 > .btn, .div2 > .btn{
+        height: 40px;
+    }
+    .visibility{
+        grid-template-rows: 1fr;
+ 
+    }
+    .showLess2, .showLess1{
+        display: none;
+    }
 }
 
-.bookView div{
-    overflow-y: scroll;
-    height: 60vh;
-}
 @keyframes typing {
     to{
         left: 100%
@@ -250,3 +331,4 @@ h1.heading{
         transform: translateY(0);
     }
 }
+

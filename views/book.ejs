@@ -1,10 +1,67 @@
 <%- include('partials/header.ejs')%>
 <div id="bookPage">
-    <div class="header row">
+    <div class="header">
+        <h1>
+            <%= book.title %>
+        </h1>
+        <p>
+            by: <%= book.author %>
+        </p>
+        <% for(var j = 0; j< book.rating; j++){%>
+            <i class="fa-solid fa-star"></i>
+        <%}%>
+    
+        <% for(var k = book.rating; k< 5; k++){%>
+            <i class="fa-regular fa-star"></i>
+        <%}%>
+    </div>
+    <div class="row content">
+
+        <div class="col-4">
+            <div>
+                <img src="<%=book.link%>" alt="<%=book.title%>">
+            </div>
+            <br>
+            <div class="description div1">
+                    <div>
+                        <%= book.description %>
+                    </div>
+                    <button class="readMore1 btn">Read more</button>
+                    <button class="showLess1 btn">Show Less</button>
+            </div>
+        </div>
+
+        <div class="col-6">
+
+                <% if(book.review != ''){%>
+                    <div>
+                        <h5>
+                            My Review
+                        </h5>
+                        <p>
+                            <div class="div2">
+                                <div>
+                                    <%=book.review%>
+                                </div>
+                                <button class="readMore2 btn">Read more</button>
+                                <button class="showLess2 btn">Show Less</button>    
+                            </div>
+                        </p>
+                    </div>
+                <%}else{%>
+                    <p>
+                        Stay Tuned for the Review!
+                    </p>
+                <%}%>
+
+            
+        </div>
+
+    </div>
+    <!--<div class="header row">
         <div class="col img">
             <span>
                 <img class="book" src="<%=book.link%>" alt="<%=book.title%>">
-                
             </span>
         </div>
         <div class="col title">
@@ -48,7 +105,7 @@
             <%}%>
         </div>
     </div>
-</div>
+</div>-->
 
-
+<script src="scripts/book.js"></script>
 <%- include('partials/footer.ejs') %>
